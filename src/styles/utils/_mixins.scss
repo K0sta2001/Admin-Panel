@@ -1,0 +1,34 @@
+// text style
+@mixin text(
+  $text-color,
+  $text-size,
+  $text-weight,
+  $text-line-height,
+  $text-letter-spacing
+) {
+  color: $text-color;
+  font-size: $text-size;
+  font-weight: $text-weight;
+  line-height: $text-line-height;
+  letter-spacing: $text-letter-spacing;
+}
+
+// button
+@mixin button($gap) {
+  display: flex;
+  align-items: center;
+  column-gap: $gap;
+  &:hover {
+    background: #e9ebff;
+    p {
+      color: #3d4dff;
+    }
+    div {
+      background: #e9ebff !important;
+      border-color: #3d4dff !important;
+      svg {
+        color: #3d4dff !important;
+      }
+    }
+  }
+}

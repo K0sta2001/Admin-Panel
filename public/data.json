@@ -1,0 +1,16 @@
+{
+  "profile": {
+    "id": "1",
+    "name": "Alex",
+    "lastName": "Kognitiv",
+    "email": "Alexkognitiv@gmail.com"
+  },
+  "categories": [
+    "July",
+    "August",
+    "September",
+    "November",
+    "December",
+    "January"
+  ]
+}

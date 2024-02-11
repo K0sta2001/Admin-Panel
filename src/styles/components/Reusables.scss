@@ -1,0 +1,78 @@
+@import "../utils/_variables.scss";
+@import "../utils/_mixins.scss";
+
+// search-input
+.search-container {
+  column-gap: 17px;
+  .search-input {
+    outline: none;
+    border: none;
+    width: 220px;
+    @include text(
+      $--Light-Main-Primary-Primary---Dark-10,
+      14px,
+      400,
+      18px,
+      0.028px
+    );
+  }
+  .search-input::placeholder {
+    color: $--Light-Main-Primary-Primary---Dark-4;
+  }
+}
+//
+// category
+.Category {
+  padding: 40px 24px;
+  border: 1px solid #f0f0f0;
+  justify-content: space-between;
+  align-items: start !important;
+  background-color: #fff;
+  min-width: 400px;
+  max-width: 510px;
+  width: 31%;
+  height: 250px;
+  row-gap: 40px;
+  flex-shrink: 1;
+  .fl-col {
+    align-items: flex-start !important;
+  }
+  .first-text {
+    @include text(
+      $--Light-Main-Primary-Primary---Dark-10,
+      16px,
+      510,
+      22px,
+      0.016px
+    );
+  }
+  .segment {
+    width: 220px;
+    @include text(
+      $--Light-Main-Primary-Primary---Dark-7,
+      16px,
+      400,
+      24px,
+      0.2px
+    );
+  }
+  .instruction {
+    @include text(
+      $--Light-Main-Primary-Primary---Dark-10,
+      14px,
+      400,
+      21px,
+      0.2px
+    );
+  }
+  .description {
+    @include text(
+      $--Light-Main-Primary-Primary---Dark-7,
+      14px,
+      400,
+      22px,
+      0.056px
+    );
+  }
+}
+//
