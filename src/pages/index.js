@@ -27,7 +27,7 @@ export default function MainStack() {
   } else {
     return (
       <div className="App">
-        <components.Nav displayRouteMap={displayRouteMap} />
+        <components.Nav displayRouteMap={displayRouteMap} routeMap={routeMap} />
         <components.RouteMap
           routes={routeMap?.routes}
           title={routeMap?.label}

@@ -30,7 +30,6 @@
       justify-content: flex-end;
       border-radius: 2;
       transition: border-left 300ms ease;
-      border-left: 2px solid #6471ff00;
       img {
         width: 19px;
         cursor: pointer;
@@ -39,9 +38,9 @@
       }
     }
     .navigation:hover {
-      border-left: 2px solid #6471ff;
+      border-left: 2px solid #6471ff !important;
       img {
-        opacity: 0.6;
+        opacity: 0.6 !important;
       }
     }
   }

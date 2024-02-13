@@ -1,3 +1,4 @@
+import { useState } from "react";
 // styles + images
 import "../../styles/components/Constants.scss";
 import logo from "../../assets/images/icons/MainLogo.svg";
@@ -7,7 +8,24 @@ import info from "../../assets/images/icons/Info-Square.svg";
 // version
 import packageJson from "../../../package.json";
 
-export default function Nav({ displayRouteMap }) {
+export default function Nav({ displayRouteMap, routeMap }) {
+  const [borderStates, setBorderStates] = useState(
+    Array(routes.length).fill(false)
+  );
+  const [imageOpacities, setImageOpacities] = useState(
+    Array(routes.length).fill(1)
+  );
+
+  const toggleBorderAndOpacity = (index) => {
+    const newBorderStates = [...borderStates];
+    const newImageOpacities = [...imageOpacities];
+
+    newBorderStates[index] = !newBorderStates[index];
+    newImageOpacities[index] = newBorderStates[index] ? 0.6 : 1;
+
+    setBorderStates(newBorderStates);
+    setImageOpacities(newImageOpacities);
+  };
   // set route map
   const Navigations = () => {
     return (
@@ -17,9 +35,30 @@ export default function Nav({ displayRouteMap }) {
             <div
               className="fl-row navigation"
               key={index}
-              onClick={() => displayRouteMap(route?.content)}
+              style={{
+                borderLeft: borderStates[index] ? "2px solid #6471ff" : "none",
+              }}
+              onClick={() => {
+                displayRouteMap(route?.content);
+                if (routeMap && route?.content === routeMap) {
+                  toggleBorderAndOpacity(index);
+                } else if (!routeMap) {
+                  toggleBorderAndOpacity(index);
+                }
+              }}
             >
-              <img src={route.src} alt={index}></img>
+              <img
+                src={route.src}
+                alt={index}
+                style={{ opacity: imageOpacities[index] }}
+                onClick={() => {
+                  if (routeMap && route?.content === routeMap) {
+                    toggleBorderAndOpacity(index);
+                  } else if (!routeMap) {
+                    toggleBorderAndOpacity(index);
+                  }
+                }}
+              ></img>
             </div>
           );
         })}
